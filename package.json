@@ -7,7 +7,25 @@
     "cheerio": "^1.0.0-rc.10",
     "crypto-js": "^4.1.1"
   },
+  "version": "1.0.1",
+  "author": "archethic <naijun0403@naver.com> (https://arthic.dev)",
   "scripts": {
-    "test": "ts-node ./example/login.ts"
-  }
+    "start": "tsc example/login.ts && node example/login.js"
+  },
+  "name": "node-kakaolink",
+  "description": "kakaolink module for nodeJS",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/archethic/node-kakaolink.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/archethic/node-kakaolink/issues"
+  },
+  "homepage": "https://github.com/archethic/node-kakaolink#readme"
 }
