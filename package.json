@@ -1,24 +1,28 @@
 {
   "dependencies": {
-    "@types/cheerio": "^0.22.30",
-    "@types/crypto-js": "^4.0.2",
     "axios": "^0.21.1",
     "axios-cookiejar-support": "^1.0.1",
     "cheerio": "^1.0.0-rc.10",
     "crypto-js": "^4.1.1"
   },
-  "version": "1.0.1",
+  "version": "1.1.1",
   "author": "archethic <naijun0403@naver.com> (https://arthic.dev)",
   "scripts": {
-    "start": "tsc example/login.ts && node example/login.js"
+    "build": "tsc"
   },
   "name": "node-kakaolink",
   "description": "kakaolink module for nodeJS",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "directories": {
     "example": "example"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5",
+    "@types/cheerio": "^0.22.30",
+    "@types/crypto-js": "^4.0.2"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/archethic/node-kakaolink.git"
