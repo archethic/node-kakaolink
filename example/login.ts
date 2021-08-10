@@ -10,7 +10,7 @@ async function main() {
     const loginRes = await api.login({
         email: 'email',
         password: 'password',
-        keeplogin: true
+        keeplogin: true //if keeplogin false, alive login only 24 hours
     });
     if(!loginRes.success) throw new Error(`Login Failed with status: ${loginRes.status} and message: ${loginRes.message}`);
     console.log('[+] Kakao Link Auth Login Success!')
