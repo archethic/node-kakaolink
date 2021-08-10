@@ -1,7 +1,7 @@
 /**
  * Created by archethic on 2021/08/06
  */
-import { ApiClient, KakaoLinkClient } from "../index";
+import { ApiClient, KakaoLinkClient } from "node-kakaolink";
 
 const CLIENT = new KakaoLinkClient();
 
