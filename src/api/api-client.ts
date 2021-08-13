@@ -63,7 +63,7 @@ export class ApiClient {
                 webview_v: '2',
                 email: CryptoJS.AES.encrypt(loginParams.email, cryptoKey).toString(),
                 password: CryptoJS.AES.encrypt(loginParams.password, cryptoKey).toString(),
-                stay_signed_in: loginParams.keeplogin || 'true',
+                stay_signed_in: String(loginParams.keeplogin) || 'true',
                 continue: decodeURIComponent(LinkConfig.accountsUrl.split('=')[1]),
                 third: 'false',
                 k: 'true',
