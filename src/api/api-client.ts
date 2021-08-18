@@ -7,10 +7,22 @@ import axiosCookieJarSupport from "axios-cookiejar-support";
 import { load } from "cheerio";
 import { CookieJar } from "tough-cookie";
 import { LinkConfig } from "../config";
-import { AsyncLoginResult, authenticateResponse } from "../type";
 import CryptoJS from 'crypto-js'
+import { ProcessResponse } from "../request";
+import { AuthStatusCode } from "../request/kakaolink-status";
 
 axiosCookieJarSupport(axios)
+
+export interface loginResult {
+    readonly apiKey: string,
+    readonly url: string,
+    readonly cookieJar: CookieJar
+}
+
+export interface authenticateResponse {
+    readonly status: AuthStatusCode | number,
+    readonly message: string
+}
 
 export class ApiClient {
     #cookieJar: CookieJar;
@@ -49,7 +61,7 @@ export class ApiClient {
         return new ApiClient(cookieJar, $, apiKey, url)
     }
 
-    async login(loginParams: loginInterface): AsyncLoginResult {
+    async login(loginParams: loginInterface): ProcessResponse<loginResult> {
         const cryptoKey = this.#loginRes('input[name=p]').attr('value')!.toString()
         const csrfToken = this.#loginRes('head > meta:nth-child(3)').attr('content')!.toString();
         const getAuthRes: AxiosResponse<authenticateResponse> = await axios({
@@ -77,7 +89,6 @@ export class ApiClient {
             return {
                 success: false,
                 status: getAuthRes.data.status,
-                message: getAuthRes.data.message
             }
         }
         return {
@@ -90,13 +101,6 @@ export class ApiClient {
             }
         }
     }
-}
-
-export enum LoginStatusCode {
-    SUCCESS = 0,
-    CRYPTO_ERROR = -484,
-    BLOCK_COUNTRY = -435,
-    INCORRECT_ACCOUNTS = -450
 }
 
 interface loginInterface {

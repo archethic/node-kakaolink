@@ -4,6 +4,8 @@
 > npm i node-kakaolink
 ## example
 ```example``` 폴더를 참고해주세요
+## version
+> Lasted - 1.1.6
 ## Feature
-- [x] 400 Error fixed
-- [x] Cookie Error fixed
+- [x] rewrite type
+- [ ] add KakaoLinkBuilder
