@@ -6,6 +6,9 @@
 
 import { AuthStatusCode } from "./kakaolink-status";
 
+export * from './kakaolink-status';
+export * from './web-response';
+
 type StatusCode = AuthStatusCode | number;
 
 interface RootResponse {

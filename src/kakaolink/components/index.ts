@@ -4,8 +4,10 @@
  * This code is licensed under the MIT Licensing Principles.
  */
 
+import { KakaoLinkParams } from "../custom";
+
 export interface KakaoLinkComponents {
 
-    append(): void;
+    append(link: KakaoLinkParams): void;
 
 }

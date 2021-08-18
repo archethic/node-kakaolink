@@ -5,14 +5,14 @@
  */
 
 export interface KakaoLinkCustom {
-    link_ver: '4.0' | string,
-    template_id: number | string,
-    template_args: Record<string, unknown>
+    link_ver: '4.0' | string;
+    template_id: number | string;
+    template_args: Record<string, unknown>;
 }
 
 export interface KakaoLinkDefault {
     template_object: {
-        object_type: 'feed',
+        object_type: 'feed' | 'commerce' | 'list' | 'location' | 'text',
         content: {
             title?: string,
             description?: string,
@@ -37,8 +37,8 @@ export interface KakaoLinkDefault {
                 android_execution_params?: string,
                 ios_execution_params?: string
             }
-        }>
-    }
+        }>,
+    },
 }
 
-export type KakaoLinkParams = KakaoLinkCustom | KakaoLinkDefault
+export type KakaoLinkParams = KakaoLinkCustom | KakaoLinkDefault;

@@ -5,3 +5,6 @@
  */
 
 export * from './kakaolink-builder'
+export * from './custom';
+export * from './components';
+export * from './kakaolink-type'

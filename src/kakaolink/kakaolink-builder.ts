@@ -4,13 +4,19 @@
  * This code is licensed under the MIT Licensing Principles.
  */
 
+import { KakaoLinkComponents } from "./components";
+
 /**
  * Build Kakao Link Template
  */
 export class KakaoLinkBuilder {
-    private _contents: any[];
+    private _contents: KakaoLinkComponents[];
     
     constructor() {
         this._contents = [];
+    }
+
+    title(title: string) {
+        // this._contents.push(title);
     }
 }
