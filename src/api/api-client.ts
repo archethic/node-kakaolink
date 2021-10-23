@@ -73,7 +73,7 @@ export class ApiClient {
             withCredentials: true,
             responseType: 'json'
         })
-        if(getAuthRes.data['status'] !== 0) {
+        if(getAuthRes.data['status'] != 0) {
             return {
                 success: false,
                 status: getAuthRes.data.status,
@@ -96,7 +96,8 @@ export enum LoginStatusCode {
     SUCCESS = 0,
     CRYPTO_ERROR = -484,
     BLOCK_COUNTRY = -435,
-    INCORRECT_ACCOUNTS = -450
+    INCORRECT_ACCOUNTS = -450,
+    CAPCHA_BLOCK = -481
 }
 
 interface loginInterface {

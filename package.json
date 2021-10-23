@@ -3,9 +3,10 @@
     "axios": "^0.21.1",
     "axios-cookiejar-support": "^1.0.1",
     "cheerio": "^1.0.0-rc.10",
-    "crypto-js": "^4.1.1"
+    "crypto-js": "^4.1.1",
+    "tough-cookie": "^4.0.0"
   },
-  "version": "1.1.6",
+  "version": "1.1.7",
   "author": "archethic <naijun0403@naver.com> (https://arthic.dev)",
   "scripts": {
     "build": "tsc"
